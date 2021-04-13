@@ -1,1 +1,18 @@
-#take home projec t#8
+### project #8 ###
+description :
+- created fullstack CRUD app from scratch
+- login, signup and  JWT tokens
+- Node.js and Express for backend
+- Postgress and Sequalize for database
+- React and elements of Bootstrap for front-end
+- RESTful API
+
+### SET UP ###
+from your terminal:
+
+createDb project-8,
+npm install
+npm run start-dev
+
+
+

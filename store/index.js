@@ -4,13 +4,17 @@ import authReducer from './auth'
 // import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger'
 
+import user from './user'
+import singlePost from './singlePost'
+import posts from './posts'
+
 
 const reducer = combineReducers({
-  // user,
-  // singleStory,
-  // authors,
+  user,
+  singlePost,
+  posts,
   // author
-  myReducer
+
 })
 
 const store = createStore(

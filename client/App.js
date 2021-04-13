@@ -10,6 +10,7 @@ import Login from './components/Login'
 import Nav from './components/Nav'
 import Home from './components/Home'
 import Signup from './components/Signup'
+import SinglePost from './components/SinglePost'
 
 
 
@@ -19,9 +20,10 @@ export default function App() {
       <BrowserRouter>
         <Nav />
         <main className="form-signin">
-          <Route path='/' exact component={Home} />
+          <Route path='/home' exact component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
+          <Route path="/home/posts/:postId " component={SinglePost} />
         </main>
       </BrowserRouter>
     </div>
