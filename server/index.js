@@ -1,13 +1,15 @@
 const path = require('path');
 const express = require('express');
 const app = express();
-// const port = process.env.PORT || 3000;
+const cors = require('cors')
+const cookieParser = require("cookie-parser")
 const morgan = require('morgan');
 module.exports = app
 
 
 
 app.use(morgan('dev'));
+app.use(cookieParser())
 
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
@@ -17,7 +19,13 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/api', require('./apiRoutes'));
 
+app.use(express.json)
 
+//send credentials
+app.use(cors({
+  credentials: true,
+  origin: ["http://localhost:3000", "http://localhost:8080", "http://localhost:4200"]
+}))
 
 
 

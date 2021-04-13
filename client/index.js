@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
+
 import store from '../store'
-import { Provider } from 'react-redux'
+import { Provider, connect } from 'react-redux'
+
+import App from './App'
 
 ReactDOM.render(
   <Provider store={store}>
-    <div>Hello, world!</div>
+    <App />
   </Provider>,
   document.getElementById('app')
 );
