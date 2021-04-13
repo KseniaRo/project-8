@@ -4,7 +4,7 @@ description :
 - login, signup and  JWT tokens
 - Node.js and Express for backend
 - Postgress and Sequalize for database
-- React and elements of Bootstrap for front-end
+- React and elements of Bootstrap for frontend
 - RESTful API
 
 ### SET UP ###
