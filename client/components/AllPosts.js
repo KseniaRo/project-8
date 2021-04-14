@@ -28,18 +28,25 @@ const AllPosts = (props) => {
       {posts ? (
         posts.map(post => (
           <div key={post.id}>
-            <Link to={`/home/posts/${post.id}`} >
-              <h3>{post.title}</h3>
-              <p>
-                {post.description}
-              </p>
-            </Link>
+            <h3>{post.title}</h3>
+            <p>
+              {post.description}
+            </p>
           </div>
+          // <div key={post.id}>
+          //   <Link to={`/home/posts/${post.id}`} >
+          //     <h3>{post.title}</h3>
+          //     <p>
+          //       {post.description}
+          //     </p>
+          //   </Link>
+          // </div>
         ))
       ) : (
-          <div> You do not have any posts yet...</div>)}
+          <div> You do not have any posts yet...
+          </div>)}
 
-      <div> <CreatePost /></div>
+      <div> <CreatePost id={props.id} /></div>
 
 
 

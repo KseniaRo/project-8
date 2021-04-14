@@ -17,6 +17,13 @@ const Post = db.define('post', {
       notEmpty: true
     }
   },
+  owner: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
+  },
 })
 
 module.exports = Post
