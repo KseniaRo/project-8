@@ -1,9 +1,23 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom'
 
+import axios from 'axios'
+
 
 const Nav = () => {
+  const [user, setUser] = useState('')
+  useEffect(() => {
+    (
+      async () => {
+        const { data }
+          = await axios.get('/api/auth/user')
+        if (data) {
+          setUser(data.name)
+        }
+      }
+    )
+  })
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
       <div className="container-fluid">

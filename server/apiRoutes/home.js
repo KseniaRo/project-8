@@ -3,7 +3,12 @@ const router = require('express').Router();
 
 
 router.get('/:userId/posts', function (req, res, next) {
-  req.send("hello!")
+
+  try {
+    res.send("hello!")
+  } catch (error) {
+
+  }
 });
 
 router.post('/newPost', function (req, res, next) { /* etc */ });

@@ -35,21 +35,75 @@ class CreatePost extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div>
-          <ul>
-            <li>Title is requiared</li>
-          </ul>
-          <label htmlFor="title">Post Title:</label>
-          <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
-        </div>
+      <div className="container">
+        <h4 className="mb-3">Create new post</h4>
+        <form className="needs-validation" noValidate
+          onSubmit={this.handleSubmit}>
+          <div className="row g-3">
 
-        <div>
-          <label htmlFor="description">Project Description:<span className="warning">Describe your project here</span></label>
-          <input type="text" name="description" value={this.state.description} onChange={this.handleChange} />
-        </div>
-        <button className="back" type="submit">Submit</button>
-      </form>
+            <div className="col-sm-6">
+              <label htmlFor="title" className="form-label">Title</label>
+              <input className="form-control" type="text" name="dtitle" value={this.state.title} onChange={this.handleChange} required />
+              <div className="invalid-feedback">
+                Title is required.
+              </div>
+            </div>
+
+            <div className="col-sm-6">
+              <label htmlFor="Description" className="form-label">Description</label>
+              <input className="form-control" type="text" name="description" value={this.state.description} onChange={this.handleChange} required />
+              <div className="invalid-feedback">
+                Description is required.
+              </div>
+            </div>
+
+
+            <div className="col-12">
+              <label htmlFor="username" className="form-label">Username</label>
+              <div className="input-group has-validation">
+                <span className="input-group-text">@</span>
+                <input type="text" className="form-control" id="username" placeholder="Username" required />
+                <div className="invalid-feedback">
+                  Your username is required.
+                </div>
+              </div>
+            </div>
+
+            <div className="col-12">
+              <label htmlFor="email" className="form-label">Email <span className="text-muted">(Optional)</span></label>
+              <input type="email" className="form-control" id="email" placeholder="you@example.com" />
+              <div className="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+
+            <div className="col-md-5">
+              <label htmlFor="country" className="form-label">Country</label>
+              <select className="form-select" id="country" required>
+                <option value="">Choose...</option>
+                <option>United States</option>
+              </select>
+              <div className="invalid-feedback">
+                Please select a valid country.
+              </div>
+            </div>
+
+
+            <div className="form-check">
+              <input type="checkbox" className="form-check-input" />
+              <label className="form-check-label" htmlFor="checkBox">Checkbox 1</label>
+            </div>
+            <div className="form-check">
+              <input type="checkbox" className="form-check-input" />
+              <label className="form-check-label" htmlFor="checkBox">Checkbox 2</label>
+            </div>
+
+            <button className="w-100 btn btn-primary btn-lg" type="submit">Submit post</button>
+          </div>
+        </form>
+
+      </div>
+
     )
   }
 }
